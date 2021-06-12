@@ -102,8 +102,12 @@ void logging1(const char* old, char* new)
 ## Soal 4 
 Untuk memudahkan dalam memonitor kegiatan pada filesystem mereka, Sin dan Sei membuat sebuah log system dengan spesifikasi sebagi berikut.
 a. Log system yang akan terbentuk bernama “SinSeiFS.log” pada direktori home pengguna. Log system ini akan menyimpan daftar perintah system call yan gtelah dijalankan pada filesystem.
-b. Karena Sin dan Sei suka kerapian, maka log yang dibuat akan dibagi menjadi dua level, ayitu INFO dan WARNING.
+
+b. Karena Sin dan Sei suka kerapian, maka log yang dibuat akan dibagi menjadi dua level, yaitu INFO dan WARNING.
+
 c. Untuk log level WARNING, digunakan untuk mencatat syscall rmdir dan unlink.
+
 d. Sisanya akan dicatat pada level INFO.
+
 e. Format untuk logging yaitu :
     [Level]::[dd][mm][yyyy]-[HH]:[MM]:[SS]:[CMD]::[DESC :: DESC]
