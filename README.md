@@ -13,7 +13,7 @@ Misalkan terdapat file bernama kucinglucu123.jpg pada direktori DATA_PENTING “
 
 - Referensi : https://www.dcode.fr/atbash-cipher
 
-# Poin Soal 1
+### Poin Soal 1
 a. Jika sebuah direktori dibuat dengan awalan “AtoZ_”, maka direktori tersebut akan menjadi direktori ter-encode. 
 
 b. Jika sebuah direktori di-rename dengan awalan “AtoZ_”, maka direktori tersebut akan menjadi direktori ter-encode.
