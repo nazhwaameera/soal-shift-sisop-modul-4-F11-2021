@@ -54,26 +54,26 @@ void decode1(char * strDec1) // decrypt encv1_
     int strLength = strlen(strDec1), s = 0;
     for(int i = strLength; i >= 0; i--)
     {
-		    if(strDec1[i] == '/')
+    	if(strDec1[i] == '/')
             break;
 
-		    if(strDec1[i] == '.') // nyari titik terakhir
+ 	if(strDec1[i] == '.') // nyari titik terakhir
         {
-		        strLength = i;
-			      break;
-		    }
+	    strLength = i;
+	    break;
+	}
     }
-	  for(int i = 0; i < strLength; i++)
+    for(int i = 0; i < strLength; i++)
     {
-		    if(strDec1[i] == '/')
+	if(strDec1[i] == '/')
         {
-			      s = i + 1;
-			      break;
+	    s = i + 1;
+	    break;
         }
     }
     for(int i = s; i < strLength; i++) 
     {
-		    if(strDec1[i] == '/')
+    	if(strDec1[i] == '/')
         {
             continue;
         }
