@@ -23,3 +23,68 @@ c. Apabila direktori yang terenkripsi di-rename menjadi tidak ter-encode, maka i
 d. Setiap pembuatan direktori ter-encode (mkdir atau rename) akan tercatat ke sebuah log. Format : /home/[USER]/Downloads/[Nama Direktori] → /home/[USER]/Downloads/AtoZ_[Nama Direktori]
 
 e. Metode encode pada suatu direktori juga berlaku terhadap direktori yang ada di dalamnya. (rekursif)
+
+Untuk menyelesaikan soal di atas, berikut fungsi encode dan decodenya :
+```C
+void encode1(char* strEnc1) 
+{ 
+    if(strcmp(strEnc1, ".") == 0 || strcmp(strEnc1, "..") == 0)
+        return;
+    
+    int strLength = strlen(strEnc1);
+    for(int i = 0; i < strLength; i++) 
+    {
+		    if(strEnc1[i] == '/') 
+            continue;
+		    if(strEnc1[i] == '.')
+            break;
+        
+		    if(strEnc1[i] >= 'A' && strEnc1[i] <= 'Z')
+            strEnc1[i] = 'Z' + 'A' - strEnc1[i];
+        if(strEnc1[i] >= 'a' && strEnc1[i] <= 'z')
+            strEnc1[i] = 'z' + 'a' - strEnc1[i];
+    }
+}
+
+void decode1(char * strDec1) // decrypt encv1_
+{
+    if(strcmp(strDec1, ".") == 0 || strcmp(strDec1, "..") == 0 || strstr(strDec1, "/") == NULL) 
+        return;
+    
+    int strLength = strlen(strDec1), s = 0;
+    for(int i = strLength; i >= 0; i--)
+    {
+		    if(strDec1[i] == '/')
+            break;
+
+		    if(strDec1[i] == '.') // nyari titik terakhir
+        {
+		        strLength = i;
+			      break;
+		    }
+    }
+	  for(int i = 0; i < strLength; i++)
+    {
+		    if(strDec1[i] == '/')
+        {
+			      s = i + 1;
+			      break;
+        }
+    }
+    for(int i = s; i < strLength; i++) 
+    {
+		    if(strDec1[i] == '/')
+        {
+            continue;
+        }
+        if(strDec1[i] >= 'A' && strDec1[i] <= 'Z')
+        {
+            strDec1[i] = 'Z' + 'A' - strDec1[i];
+        }
+        if(strDec1[i] >= 'a' && strDec1[i] <= 'z')
+        {
+            strDec1[i] = 'z' + 'a' - strDec1[i];
+        }
+    }	
+}
+```
