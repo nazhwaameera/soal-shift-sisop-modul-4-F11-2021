@@ -34,12 +34,12 @@ void encode1(char* strEnc1)
     int strLength = strlen(strEnc1);
     for(int i = 0; i < strLength; i++) 
     {
-		    if(strEnc1[i] == '/') 
+	if(strEnc1[i] == '/') 
             continue;
-		    if(strEnc1[i] == '.')
+	if(strEnc1[i] == '.')
             break;
         
-		    if(strEnc1[i] >= 'A' && strEnc1[i] <= 'Z')
+	if(strEnc1[i] >= 'A' && strEnc1[i] <= 'Z')
             strEnc1[i] = 'Z' + 'A' - strEnc1[i];
         if(strEnc1[i] >= 'a' && strEnc1[i] <= 'z')
             strEnc1[i] = 'z' + 'a' - strEnc1[i];
