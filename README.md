@@ -88,3 +88,12 @@ void decode1(char * strDec1) // decrypt encv1_
     }	
 }
 ```
+
+Untuk mencatat setiap pembuatan direktori ter-encode, digunakan fungsi di bawah ini :
+```C
+void logging1(const char* old, char* new) 
+{
+    FILE * logFile = fopen(AtoZLogPath, "a");
+    fprintf(logFile, "%s â†’ %s\n", old, new);
+    fclose(logFile);
+}
