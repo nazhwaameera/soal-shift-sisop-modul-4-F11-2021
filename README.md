@@ -112,3 +112,53 @@ d. Sisanya akan dicatat pada level INFO.
 
 e. Format untuk logging yaitu :
     [Level]::[dd][mm][yyyy]-[HH]:[MM]:[SS]:[CMD]::[DESC :: DESC]
+
+Untuk menyelesaikan soal ini, digunakan fungsi log berikut :
+```C
+void logging2(char* c, int type)
+{
+    FILE * logFile = fopen(FSLogPath, "a");
+    time_t currTime = time(NULL);
+    struct tm *time_info = localtime(&currTime);
+    char time[100];
+    strftime(time, 100, "%d%m%y-%H:%M:%S", time_info);
+	
+    // Log Info
+    if(type == 1)
+    {
+        fprintf(logFile, "INFO::%s::%s\n", time, c);
+    }
+    // Log Warning
+    else if(type == 2)
+    {
+        fprintf(logFile, "WARNING::%s::%s\n", time, c);
+    }
+    fclose(logFile);
+}
+```
+Fungsi ini kemudian ditambahkan sesuai fungsi yang diminta. Sebagai contoh, fungsi rmdir.
+```C
+// Remove a directory
+static int xmp_rmdir(const char *path) 
+{
+    char * strToEnc1 = strstr(path, prefix);
+    if(strToEnc1 != NULL)
+    {
+        decode1(strToEnc1); // UNTUK ngebalikin biar bisa dibaca di document
+    }
+    
+    char newPath[1000];
+    sprintf(newPath, "%s%s", directoryPath, path);
+    char str[100];
+    sprintf(str, "RMDIR::%s", path);
+    logging2(str, 2);
+    int result;
+    result = rmdir(newPath);
+	
+    if(result == -1)
+    {
+    	return -errno;
+    }
+    return 0;
+}
+```
