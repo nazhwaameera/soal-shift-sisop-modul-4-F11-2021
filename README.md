@@ -7,9 +7,8 @@ Di suatu jurusan, terdapat admin lab baru yang super duper gabut. Ia Bernama Sin
 **NOTE**
 
 - Semua file yang berada pada direktori harus ter-encode menggunakan Atbash cipher(mirror).
-Misalkan terdapat file bernama kucinglucu123.jpg pada direktori DATA_PENTING
-“AtoZ_folder/DATA_PENTING/kucinglucu123.jpg” → “AtoZ_folder/WZGZ_KVMGRMT/pfxrmtofxf123.jpg”
+Misalkan terdapat file bernama kucinglucu123.jpg pada direktori DATA_PENTING “AtoZ_folder/DATA_PENTING/kucinglucu123.jpg” → “AtoZ_folder/WZGZ_KVMGRMT/pfxrmtofxf123.jpg”
 
-- filesystem berfungsi normal layaknya linux pada umumnya, Mount source (root)
-filesystem adalah directory /home/[USER]/Downloads, dalam penamaan file ‘/’
-diabaikan, dan ekstensi tidak perlu di-encode.
+- Filesystem berfungsi normal layaknya linux pada umumnya, Mount source (root) filesystem adalah directory /home/[USER]/Downloads, dalam penamaan file ‘/’ diabaikan, dan ekstensi tidak perlu di-encode.
+
+- Referensi : https://www.dcode.fr/atbash-cipher
