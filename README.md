@@ -162,3 +162,8 @@ static int xmp_rmdir(const char *path)
     return 0;
 }
 ```
+
+**Berikut output untuk soal 1 dan 4**
+![IMG_2939](https://user-images.githubusercontent.com/74484044/121796121-f5dff300-cc40-11eb-8460-185de6608709.JPG)
+![IMG_2940](https://user-images.githubusercontent.com/74484044/121796124-fd9f9780-cc40-11eb-9d37-4e2f8201f916.JPG)
+![IMG_2941](https://user-images.githubusercontent.com/74484044/121796128-07c19600-cc41-11eb-8474-292843e363c9.JPG)
